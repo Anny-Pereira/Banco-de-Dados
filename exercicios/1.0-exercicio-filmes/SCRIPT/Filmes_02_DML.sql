@@ -20,3 +20,11 @@ GO
 INSERT INTO Filme (IdGenero, TituloFilme)
 VALUES(2, 'Até que a sorte nos separe');
 GO
+
+INSERT INTO Filme ( TituloFilme)
+VALUES( 'HER');
+GO
+
+INSERT INTO Genero(NomeGenero)
+VALUES ('Aventura');
+GO

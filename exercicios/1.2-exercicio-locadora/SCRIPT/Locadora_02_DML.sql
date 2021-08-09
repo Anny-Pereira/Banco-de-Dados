@@ -29,6 +29,7 @@ VALUES (2, 'Ford'), (4, 'Fiat'), (1, 'Nissan'), (3, 'GM'), (5, 'BMW');
 GO
 
 
-INSERT INTO Aluguel(IdVeiculo, IdCliente, NomeCliente, Carro, DataAluguel)
-VALUES (3, 2, 'Bianca', 'EcoSport', '2021-02-15'), (5, 3, 'José', 'Corsa', '2021-05-30'), (1, 1, 'Paulo', 'Palio', '2021-07-23'), (2, 2, 'Bianca', 'X1', '2021-08-02');
+INSERT INTO Aluguel(IdVeiculo, IdCliente, DataAluguel, DataDevolucao)
+VALUES (3, 2,  '2021-02-15','2021-03-19' ), (5, 3, '2021-05-30','2021-06-30' ), (1, 1,  '2021-07-23', '2021-08-25'), (2, 2, '2021-08-02', '2021-10-27');
 GO
+

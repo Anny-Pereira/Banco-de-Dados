@@ -1,16 +1,17 @@
 USE CLINICA;
 GO
 
-INSERT INTO ClinicaVeterinaria (Endereco)
-VALUES ('Av. São João, 132');
+INSERT INTO ClinicaVeterinaria (Endereco, RazaoSocial)
+VALUES ('Av. São João, 132', 'Pet Care');
 GO
 
-INSERT INTO Veterinario(IdClinica, NomeVeterinario)
-VALUES (1, 'Dr. Bruno'), (1, 'Dra. Beatriz'), (1, 'Dra.Fernanda'), (1, 'Dr,Flávio');
+
+INSERT INTO Veterinario(IdClinica, NomeVeterinario, CRMV)
+VALUES (1, 'Dr. Bruno', '1234'), (1, 'Dra. Beatriz', '5678'), (1, 'Dra.Fernanda', '2020'), (1, 'Dr,Flávio', '7576');
 GO
 
-DELETE FROM Veterinario WHERE IdVeterinario = 4;
-GO
+--DELETE FROM Veterinario WHERE IdVeterinario = 4;
+--GO
 
 
 INSERT INTO Dono (NomeDono)
@@ -21,14 +22,22 @@ INSERT INTO Pet(IdDono, NomePet)
 VALUES (1, 'Totó'), (4, 'Belinha'), (3, 'Mel'), (1, 'Pipoca');
 GO
 
+INSERT INTO Pet (IdDono, NomePet)
+VALUES  (3, 'Bolota');
+GO
+
 INSERT INTO Raca(IdPet, NomeRaca, NomePet)
-VALUES (4, 'Papagaio', 'Mel'), (3, 'Persa', 'Belinha'), (5, 'Vira-Lata', 'Pipoca'), (2, 'Doberman', 'Totó');
+VALUES (3, 'Papagaio', 'Mel'), (2, 'Persa', 'Belinha'), (4, 'Vira-Lata', 'Pipoca'), (1, 'Doberman', 'Totó');
+GO
+
+INSERT INTO Raca(IdPet, NomeRaca, NomePet)
+VALUES (1002, 'São Bernardo', 'Bolota');
 GO
 
 INSERT INTO TipoPet(IdRaca, _tipoPet)
-VALUES (1, 'Pássaro'), (2, 'Gato'), (3, 'Cachorro'), (4, 'Cachorro');
+VALUES (4, 'Pássaro'), (5, 'Gato'), (6, 'Cachorro'), (7, 'Cachorro');
 GO
 
-INSERT INTO Consulta(IdVeterinario, IdPet, DataConsulta, NomeVeterinario, Pet)
-VALUES (2, 2, '2021-02-08', 'Dra. Beatriz', 'Totó'), (1, 5, '2021-05-21', 'Dr. Bruno', 'Pipoca'), (2, 3, '2021-07-14', 'Dra. Beatriz', 'Belinha'), (3, 4, '2021-08-30', 'Dra. Fernanda', 'Mel');
+INSERT INTO Consulta(IdVeterinario, IdPet, DataConsulta, NomeVeterinario, Pet, DescricaoConsulta)
+VALUES (2, 1, '2021-02-08', 'Dra. Beatriz', 'Totó', 'Manhã'), (1, 4, '2021-05-21', 'Dr. Bruno', 'Pipoca', 'Tarde'), (2, 2, '2021-07-14', 'Dra. Beatriz', 'Belinha', 'Tarde'), (3, 3, '2021-08-30', 'Dra. Fernanda', 'Mel', 'Noite');
 GO

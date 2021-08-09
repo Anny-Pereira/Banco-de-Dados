@@ -6,14 +6,17 @@ GO
 
 CREATE TABLE ClinicaVeterinaria(
 IdClinica INT PRIMARY KEY IDENTITY(1,1),
-Endereco VARCHAR(50)
+Endereco VARCHAR(50),
+RazaoSocial VARCHAR(20)
 );
 GO
+
 
 CREATE TABLE Veterinario(
 IdVeterinario INT PRIMARY KEY IDENTITY(1,1),
 IdClinica INT FOREIGN KEY REFERENCES ClinicaVeterinaria(IdClinica),
-NomeVeterinario VARCHAR(20)
+NomeVeterinario VARCHAR(20),
+CRMV CHAR(4)
 );
 GO
 
@@ -36,9 +39,11 @@ IdVeterinario INT FOREIGN KEY REFERENCES Veterinario(IdVeterinario),
 IdPet INT FOREIGN KEY REFERENCES Pet(IdPet),
 DataConsulta DATE,
 NomeVeterinario VARCHAR(20),
-Pet Varchar(10)
+Pet Varchar(10),
+DescricaoConsulta VARCHAR (30)
 );
 GO
+
 
 CREATE TABLE Raca(
 IdRaca INT PRIMARY KEY IDENTITY(1,1),

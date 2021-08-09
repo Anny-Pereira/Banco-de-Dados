@@ -12,3 +12,60 @@ GO
 
 SELECT * FROM CNH;
 GO
+
+--testes
+
+SELECT * FROM PESSOA
+LEFT JOIN TELEFONE
+ON PESSOA.IdPessoa = TELEFONE.IdPessoa;
+GO
+
+
+SELECT  NomePessoa, NumeroTelefone , _email, NumeroCNH
+FROM PESSOA
+LEFT JOIN TELEFONE
+ON PESSOA.IdPessoa = TELEFONE.IdPessoa
+LEFT JOIN EMAIL
+ON PESSOA.IdPessoa = EMAIL.IdPessoa
+LEFT JOIN CNH
+ON PESSOA.IdPessoa =  CNH.IdPessoa;
+GO
+
+
+SELECT * FROM PESSOA
+FULL OUTER JOIN TELEFONE
+ON PESSOA.IdPessoa = TELEFONE.IdPessoa
+FULL OUTER JOIN EMAIL
+ON PESSOA.IdPessoa = EMAIL.IdPessoa
+FULL OUTER JOIN CNH
+ON PESSOA.IdPessoa =  CNH.IdPessoa;
+GO
+
+
+SELECT * FROM CNH
+INNER JOIN PESSOA
+ON CNH.IdPessoa = PESSOA.IdPessoa;
+GO
+
+SELECT * FROM CNH
+FULL OUTER JOIN PESSOA
+ON CNH.IdPessoa = PESSOA.IdPessoa;
+GO
+
+ --listar as pessoas em ordem alfabética reversa, mostrando seus telefones, seus e-mails e suas CNHs:
+ SELECT NomePessoa 
+ FROM PESSOA
+ ORDER BY NomePessoa DESC;
+ GO
+
+
+ SELECT  NomePessoa, NumeroTelefone , _email, NumeroCNH
+FROM PESSOA
+LEFT JOIN TELEFONE
+ON PESSOA.IdPessoa = TELEFONE.IdPessoa
+LEFT JOIN EMAIL
+ON PESSOA.IdPessoa = EMAIL.IdPessoa
+LEFT JOIN CNH
+ON PESSOA.IdPessoa =  CNH.IdPessoa
+ORDER BY NomePessoa DESC;
+ GO
