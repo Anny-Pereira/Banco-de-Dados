@@ -28,8 +28,7 @@ GO
 CREATE TABLE Marca(
 IdMarca INT PRIMARY KEY IDENTITY(1,1),
 IdModelo INT Foreign KEY REFERENCES Modelo(IdModelo),
-NomeModelo VARCHAR(20) NOT NULL,
-AnoModelo TINYINT 
+NomeMarca VARCHAR(20) NOT NULL
 );
 GO
 

@@ -53,3 +53,8 @@ SELECT idFilme, tituloFilme, nomeGenero
 FROM FILME
 FULL OUTER JOIN GENERO
 ON FILME.idGenero = GENERO.idGenero;
+
+SELECT idFilme, tituloFilme, ISNULL (Genero.NomeGenero, 'Sem gênero') nomeGenero
+FROM Filme LEFT JOIN Genero 
+ON FILME.idGenero = GENERO.idGenero;
+GO
