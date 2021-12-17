@@ -23,11 +23,11 @@
 
 
 7.	Ordene pela data de inclusão.
-
+db.tarefas.find().sort({dataInclusao:1}).pretty()
 
 
 8.	Ordene pelas descrições.
-
+db.tarefas.find().sort({descricao:1}).pretty()
 
 
 9.	Ordene pela quantidade de caracteres das descrições.

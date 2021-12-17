@@ -38,10 +38,12 @@ db.tarefas.find({ titulo : { $in : [ "Titulo B", "Titulo C" ], descricao: "nativ
 
 
 9.	Trabalhe com um operador diferente de 'OU' para trazer todos os registros aonde as descrições sejam iguais a 'mongodb', 'css' ou 'jquery'.
+db.tarefas.find({descricao : {$in : ["mongodb", "css", "jquery"]}}).pretty()
 
 
 
 Utilizando os dois operadores juntos. $or e $in.
 10.	Procure todas as tarefas cujo título seja igual a A ou a descrição seja igual a es6 ou bootstrap.
+db.tarefas.find({$or: [{titulo : "Titulo A"}, {descricao : {$in : ["es6", "bootstrap"]}}]}).pretty()
 
 

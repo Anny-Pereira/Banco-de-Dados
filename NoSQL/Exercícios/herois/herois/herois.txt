@@ -1,15 +1,58 @@
 Você receberá um arquivo com o formato CSV contendo alguns personagens de quadrinhos e/ou desenhos animados e você deverá realizar as alterações que foram solicitadas abaixo pelo cliente.
+
+use personagens
+db
+db.createCollection("herois")
+
+mongoimport -d personagens -c herois --type csv --file herois.csv --headerline
+
+
 1.	Selecione todos os registros.
+db.herois.find().pretty()
+
+
 2.	Selecione apenas o primeiro registro.
+db.herois.find({_id:   ObjectId("61bbb7e1a7a9b5eb35e2f611")}).pretty()
+
+
 3.	Selecione todos os registros em que o nome seja igual a ‘Shrek’ ou a quantidade de gatos seja igual a 2.
+db.herois.find({$or : [{nome : "Shrek"}, {qtd gatos : 2}]}).pretty()
+
+
 4.	Selecione todos os registros em que o local de nascimento seja igual a Roma e necessariamente que a quantidade de cachorros seja igual a 3.
+db.herois.find({$and:[{local : "Roma"}, {qtd cachorros: 3}]}).pretty()
+
+
 5.	Selecione todos os registros em que a quantidade de gatos seja igual a 3 ou a quantidade de cachorros seja igual a 6.
+db.herois.find({$pr : [{qtd gatos : 3}, {qtd cachorros: 6}]}).pretty()
+
+
 6.	Selecione todos os registros em que o nome comece com C.
+
+
 7.	Selecione todos os registros em que o nome comece com H.
+
+
 8.	Selecione todos os registros em que o nome termine com a.
+
+
 9.	Selecione todos os registros em que o nome contenha s.
+
+
 10.	Selecione todos os registros em que o nome contenha ‘e’ ou ‘o’.
+
+
 11.	Insira 3 novos super-heróis.
+
+
 12.	Delete 1 super-herói em que o nome seja igual a Thor.
+db.herois.remove({"_id" : ObjectId("61bbb7e1a7a9b5eb35e2f613")})
+
+
 13.	Atualize a quantidade de gatos em que o usuário com o registro de nome ‘Thor’ possui. Atualize a quantidade de gatos de ‘0’ para ‘7’.
+db.herois.update({ "_id" : ObjectId("61bbb7e1a7a9b5eb35e2f611")} , {  "Ordem;Nome;Data Nascimento;Local;Qtd Gatos;Qtd Cachorros" : "1;Batman;25/03/1996;Detroit;7;7"})
+
+
+
 14.	Selecione todos os registros que foram trabalhados e exporte para um arquivo JSON.
+mongoexport --db personagens -c herois --out personagens.json
